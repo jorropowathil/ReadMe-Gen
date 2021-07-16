@@ -2,6 +2,27 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+function makeAReadMe(info) {
+  var answers= 
+  `
+  
+   # ${info.title}
+   ## ${info.tableOfContents}
+   ## Installation notes
+   ${info.installationNotes}
+   ## Usage Notes
+   ${info.usageNotes}
+   ## License Notes
+   ${info.licenseNotes}
+   ## Contributing Notes
+   ${info.contributingNotes}
+   ## Test Notes
+   ${info.testNotes}
+   ## Question Notes
+   ${info.questionNotes}
+  `
+  return answers
+}
 
 inquirer.prompt ([
     {
@@ -46,35 +67,28 @@ inquirer.prompt ([
     },
   ])
   .then((answers) => {
-    console.log(answers);
-    var finalHtml = makeAReadMe(answers)
-    fs.writeFile('ReadMe.md', finalHtml, (err) =>
+    var finalReadMe = makeAReadMe(answers);
+    console.log(finalReadMe)
+    fs.writeFile('ReadMe.md', finalReadMe, (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 });
 
 
-// TODO: Create a function to write README file
-function writeToFile(README.md, answers) {
-  var answers= `
-  ###${info.title}
-  ###${info.tableOfContents}
-  ###${info.installationNotes}
-  ###${info.usageNotes}
-  ###${info.licenseNotes}
-  ###${info.contributingNotes}
-  ###${info.testNotes}
-  ###${info.questionNotes}
-  `
-  return answers
 
-}
+// TODO: Create a function to write README file
+
+// function writeToFile(ReadMe.md, answers) {
+//  
+// }
 
 // TODO: Create a function to initialize app
-function init() {}
+
+// function init() {}
 
 // Function call to initialize app
-init();
+
+// init();
 
 // TODO: Include packages needed for this application
 // require generateMarkdown
