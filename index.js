@@ -2,14 +2,20 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// Make ReadMe Function
 function makeAReadMe(info) {
   var answers= 
   `
-  
    # ${info.title}
-   ## ${info.tableOfContents}
-   ## Installation notes
-   ${info.installationNotes}
+   ## Table of Contents
+   [Install](#Installation-Notes)  
+   [Usage](#Usage-Notes)  
+   [License](#License-Notes)  
+   [Contributions](#Contributing-Notes)  
+   [Tests](#Test-Notes)
+   [Questions](#Questions?)
+   ## Installation Notes
+   \`\`\` ${info.installationNotes} \`\`\`
    ## Usage Notes
    ${info.usageNotes}
    ## License Notes
@@ -18,22 +24,20 @@ function makeAReadMe(info) {
    ${info.contributingNotes}
    ## Test Notes
    ${info.testNotes}
-   ## Question Notes
-   ${info.questionNotes}
+   ## Questions?
+   Github: https://github.com/${info.githhub} \n
+   E-mail: ${info.email} \n
   `
   return answers
 }
 
+// Inquirer Prompt
 inquirer.prompt ([
+  // List of Questions
     {
       type: 'input',
       message: 'What is the name of your project?',
       name: 'title',
-    },
-    {
-      type: 'input',
-      message: 'What do you want to include in the Table of contents?',
-      name: 'tableOfContents',
     },
     {
       type: 'input',
@@ -46,9 +50,18 @@ inquirer.prompt ([
       name: 'usageNotes',
     },
     {
-      type: 'input',
+      type: 'list',
       message: 'What do you want to include in the license notes?',
       name: 'licenseNotes',
+      choices: [
+        "Apache License 2.0", 
+        "GNU General Public License v3.0",
+        "MIT License",
+        "Boost Software License 1.0",
+        "Creative Commons Zero v1.0 Universal",
+        "Mozilla Public License 2.0",
+        "The Unlicense",
+    ],
     },
     {
       type: 'input',
@@ -62,35 +75,38 @@ inquirer.prompt ([
     },
     {
       type: 'input',
-      message: 'What do you want to include in the question notes?',
-      name: 'questionNotes',
+      message: 'What is your github username?',
+      name: 'github',
+    },
+    {
+      type: 'input',
+      message: 'What is your email?',
+      name: 'email',
     },
   ])
+  // .then function
   .then((answers) => {
     var finalReadMe = makeAReadMe(answers);
     console.log(finalReadMe)
     fs.writeFile('ReadMe.md', finalReadMe, (err) =>
+    // error handling
         err ? console.log(err) : console.log('Success!')
     );
 });
 
 
 
+
 // TODO: Create a function to write README file
 
 // function writeToFile(ReadMe.md, answers) {
-//  
+ 
 // }
 
 // TODO: Create a function to initialize app
 
-// function init() {}
+function init() {}
 
 // Function call to initialize app
 
-// init();
-
-// TODO: Include packages needed for this application
-// require generateMarkdown
-// require inquirer
-// TODO: Create an array of questions for user input
+init();
