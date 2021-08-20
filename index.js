@@ -13,13 +13,13 @@ function makeAReadMe(info) {
    [License](#License-Notes)  
    [Contributions](#Contributing-Notes)  
    [Tests](#Test-Notes)
-   [Questions](#Questions?)
+   [Questions](#Questions)
    ## Installation Notes
-   \`\`\` ${info.installationNotes} \`\`\`
+    \`\`\`\n${info.installationNotes}/n\`\`\`
    ## Usage Notes
    ${info.usageNotes}
    ## License Notes
-   ${info.licenseNotes}
+   This code is licensed under ${info.licenseNotes}.
    ## Contributing Notes
    ${info.contributingNotes}
    ## Test Notes
@@ -94,19 +94,8 @@ inquirer.prompt ([
     );
 });
 
-
-
-
-// TODO: Create a function to write README file
-
-// function writeToFile(ReadMe.md, answers) {
- 
-// }
-
-// TODO: Create a function to initialize app
-
-function init() {}
-
-// Function call to initialize app
-
+// Function to intilize
+function init() {
+}
+// calling init function
 init();
