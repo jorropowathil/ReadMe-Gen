@@ -15,7 +15,7 @@ function makeAReadMe(info) {
    [Tests](#Test-Notes)
    [Questions](#Questions)
    ## Installation Notes
-    \`\`\`\n${info.installationNotes}/n\`\`\`
+    \`\`\`\n${info.installationNotes}\n\`\`\`
    ## Usage Notes
    ${info.usageNotes}
    ## License Notes
