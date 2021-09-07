@@ -1,5 +1,5 @@
 
-   # ReadMe Generator
+   # ReadMe Gen
    ## Table of Contents
    [Install](#Installation-Notes)  
    [Usage](#Usage-Notes)  
@@ -8,18 +8,18 @@
    [Tests](#Test-Notes)
    [Questions](#Questions)
    ## Installation Notes
-    ```
-node index.js
-```
+    ```node index.js```
    ## Usage Notes
-   Run node index.js in terminal
+   Use with caution
    ## License Notes
    This code is licensed under MIT License.
    ## Contributing Notes
-   
+   No contributing notes
    ## Test Notes
-   
+   No test notes
    ## Questions?
-   Github: https://github.com/undefined 
+   Github: https://github.com/jorropowathil 
 
-   E-mail: jorispowathil@gmail.com
+   E-mail: jorropowathil@gmail.com 
+
+  

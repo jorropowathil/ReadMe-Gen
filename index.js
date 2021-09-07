@@ -15,7 +15,7 @@ function makeAReadMe(info) {
    [Tests](#Test-Notes)
    [Questions](#Questions)
    ## Installation Notes
-    \`\`\`\n${info.installationNotes}\n\`\`\`
+    \`\`\`${info.installationNotes}\`\`\`
    ## Usage Notes
    ${info.usageNotes}
    ## License Notes
@@ -25,7 +25,7 @@ function makeAReadMe(info) {
    ## Test Notes
    ${info.testNotes}
    ## Questions?
-   Github: https://github.com/${info.githhub} \n
+   Github: https://github.com/${info.github} \n
    E-mail: ${info.email} \n
   `
   return answers
